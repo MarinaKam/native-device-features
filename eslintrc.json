@@ -1,0 +1,31 @@
+{
+  "root": true,
+  "parserOptions": {
+    "project": ["./tsconfig.json"]
+  },
+  "extends": [
+    "universe",
+    "eslint:recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:react/recommended",
+    "plugin:react-native/all",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["react", "react-native"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "max-len": ["warn", { "code": 120 }],
+    "react/react-in-jsx-scope": 0,
+    "no-alert": "warn",
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "no-debugger": "warn",
+    "import/no-anonymous-default-export": 0,
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/switch-exhaustiveness-check": "error",
+    "react-native/no-color-literals": "off"
+  }
+}
