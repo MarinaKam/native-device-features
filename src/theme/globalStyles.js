@@ -56,32 +56,32 @@ export const textStyles = {
   h1: {
     fontSize: 30,
     fontWeight: 500,
-    lineHeight: '63px'
+    lineHeight: 2
   },
   h2: {
     fontSize: 29,
     fontWeight: 500,
-    lineHeight: '55px'
+    lineHeight: 2
   },
   h3: {
     fontSize: 23,
     fontWeight: 500,
-    lineHeight: '130%',
+    lineHeight: 1.5,
   },
   h4: {
     fontSize: 18,
     fontWeight: 500,
-    lineHeight: '130%',
+    lineHeight: 1.5,
   },
   h5: {
     fontSize: 16,
     fontWeight: 500,
-    lineHeight: '24px',
+    lineHeight: 1.5,
   },
   h6: {
     fontSize: 16,
     fontWeight: 400,
-    lineHeight: '24px',
+    lineHeight: 1.4,
   },
   subtitle1: {
     fontSize: 14,
@@ -96,10 +96,8 @@ export const textStyles = {
   body2: {
     fontSize: 12,
     fontWeight: 400,
-    lineHeight: '15px',
   },
   caption: {
     fontSize: 12,
-    lineHeight: 1.5,
   }
 };
