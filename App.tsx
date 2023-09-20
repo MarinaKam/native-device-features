@@ -1,13 +1,16 @@
 import { FC } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { StackNavigation } from './src/navigation/StackNavigation';
 
 const App: FC = () => {
   return (
     <>
       <StatusBar style="auto" />
 
-      <Text>Hello world!</Text>
+      <NavigationContainer>
+        <StackNavigation />
+      </NavigationContainer>
     </>
   );
 };

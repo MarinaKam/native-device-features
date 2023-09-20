@@ -1,6 +1,6 @@
-import { Text, View, StyleSheet, Image, Pressable } from 'react-native';
-import { textStyles } from '../../theme';
+import { View, StyleSheet, Image, Pressable } from 'react-native';
 import { ShadowView } from '../ShadowView';
+import { Text } from '../Text';
 
 export const PlaceItem = ({ place, onSelect }) => {
   return (
@@ -9,8 +9,8 @@ export const PlaceItem = ({ place, onSelect }) => {
         <Image source={{ uri: place?.imageUri }} />
 
         <View>
-          <Text style={[textStyles.default]}>{place?.title}</Text>
-          <Text style={[textStyles.default]}>{place?.address}</Text>
+          <Text>{place?.title}</Text>
+          <Text>{place?.address}</Text>
         </View>
       </Pressable>
     </ShadowView>
