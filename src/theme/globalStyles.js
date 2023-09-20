@@ -6,6 +6,7 @@ export const globalStyles = {
       dark: '#1565c0',
     },
     secondary: {
+      50: '#f3e5f5',
       light: '#ba68c8',
       main: '#9c27b0',
       dark: '#7b1fa2',
@@ -50,48 +51,43 @@ export const globalStyles = {
 };
 
 export const textStyles = {
+  color: {
+    color: globalStyles.colors.grey['900']
+  },
   default: {
-    fontSize: 14,
+    fontSize: 16,
   },
   h1: {
     fontSize: 30,
     fontWeight: 500,
-    lineHeight: 2
   },
   h2: {
     fontSize: 29,
     fontWeight: 500,
-    lineHeight: 2
   },
   h3: {
     fontSize: 23,
     fontWeight: 500,
-    lineHeight: 1.5,
   },
   h4: {
     fontSize: 18,
     fontWeight: 500,
-    lineHeight: 1.5,
   },
   h5: {
     fontSize: 16,
     fontWeight: 500,
-    lineHeight: 1.5,
   },
   h6: {
     fontSize: 16,
     fontWeight: 400,
-    lineHeight: 1.4,
   },
   subtitle1: {
     fontSize: 14,
     fontWeight: 500,
-    lineHeight: 1.5,
   },
   subtitle2: {
     fontSize: 14,
     fontWeight: 400,
-    lineHeight: 1.5,
   },
   body2: {
     fontSize: 12,

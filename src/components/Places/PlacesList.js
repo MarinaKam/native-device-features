@@ -1,5 +1,6 @@
-import { FlatList, Text, View, StyleSheet } from 'react-native';
+import { FlatList, View, StyleSheet } from 'react-native';
 import { textStyles } from '../../theme';
+import { Text } from '../Text';
 import { PlaceItem } from './PlaceItem';
 
 export const PlacesList = ({ places = [] }) => {
