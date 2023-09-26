@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { ScrollView, StyleSheet, TextInput, View } from 'react-native';
-import { globalStyles, textStyles } from '../../theme';
+import { globalStyles, textStyles, themeColor } from '../../theme';
 import { Text } from '../Text';
 import { ImagePicker } from './ImagePicker';
+import { LocationPicker } from './LocationPicker';
 
 export const PlaceForm = () => {
   const [titleVal, setTitleVal] = useState('');
@@ -24,6 +25,7 @@ export const PlaceForm = () => {
       </View>
 
       <ImagePicker />
+      <LocationPicker />
     </ScrollView>
   );
 };
@@ -40,9 +42,9 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     padding: 8,
     fontSize: 16,
-    borderBottomColor: globalStyles.colors.secondary.dark,
+    borderBottomColor: globalStyles.colors[themeColor].dark,
     borderBottomWidth: 2,
-    backgroundColor: globalStyles.colors.secondary[100],
+    backgroundColor: globalStyles.colors[themeColor][100],
     borderRadius: 8
   }
 });

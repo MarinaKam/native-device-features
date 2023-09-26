@@ -1,6 +1,11 @@
+export const themeColor = 'secondary'; // primary, secondary, info, success, error, warning
+
 export const globalStyles = {
   colors: {
     primary: {
+      50: '#e3f2fd',
+      100: '#bbdefb',
+      200: '#90caf9',
       light: '#42a5f5',
       main: '#1976d2',
       dark: '#1565c0',
@@ -14,21 +19,33 @@ export const globalStyles = {
       dark: '#7b1fa2',
     },
     info: {
+      50: '#e1f5fe',
+      100: '#b3e5fc',
+      200: '#81d4fa',
       light: '#03a9f4',
       main: '#0288d1',
       dark: '#01579b',
     },
     success: {
+      50: '#e8f5e9',
+      100: '#c8e6c9',
+      200: '#a5d6a7',
       light: '#4caf50',
       main: '#2e7d32',
       dark: '#1b5e20',
     },
     error: {
+      50: '#ffebee',
+      100: '#ffcdd2',
+      200: '#ef9a9a',
       light: '#ef5350',
       main: '#d32f2f',
       dark: '#c62828',
     },
     warning: {
+      50: '#fff3e0',
+      100: '#ffe0b2',
+      200: '#ffcc80',
       light: '#ff9800',
       main: '#ed6c02',
       dark: '#e65100',

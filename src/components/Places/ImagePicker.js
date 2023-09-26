@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Alert, Image, StyleSheet, View } from 'react-native';
 import { launchCameraAsync, useCameraPermissions, PermissionStatus } from 'expo-image-picker';
-import { globalStyles } from '../../theme';
-import { OutlinedButton } from '../Buttons';
+import { globalStyles, themeColor } from '../../theme';
+import { Button } from '../Buttons';
 import { Text } from '../Text';
 
 export const ImagePicker = () => {
@@ -45,7 +45,7 @@ export const ImagePicker = () => {
   };
 
   return (
-    <View>
+    <>
       <View style={styles.imagePreview}>
         {!pickedImage?.uri ? (
           <Text>No image taken yet.</Text>
@@ -57,10 +57,10 @@ export const ImagePicker = () => {
         )}
       </View>
 
-      <OutlinedButton icon="camera" onPress={takeImageHandler}>
+      <Button variant="outlined" icon="camera" onPress={takeImageHandler}>
         Take Image
-      </OutlinedButton>
-    </View>
+      </Button>
+    </>
   );
 };
 
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: globalStyles.colors.secondary[100],
+    backgroundColor: globalStyles.colors[themeColor][100],
     borderRadius: 8,
     overflow: 'hidden'
   },
