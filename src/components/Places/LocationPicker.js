@@ -1,4 +1,5 @@
 import { View, StyleSheet } from 'react-native';
+import { globalStyles, themeColor } from '../../theme';
 import { Button } from '../Buttons';
 import { Text } from '../Text';
 
@@ -8,13 +9,11 @@ export const LocationPicker = () => {
 
   return (
     <View>
-      <View>
+      <View style={styles.mapPreview}>
         <Text>Preview Map</Text>
       </View>
 
-      <Text>LocationPicker</Text>
-
-      <View style={styles.buttonGroup}>
+      <View style={styles.buttonsGroup}>
         <Button style={styles.button} icon="location" onPress={getLocationHandler}>
           Locate the User
         </Button>
@@ -28,7 +27,17 @@ export const LocationPicker = () => {
 };
 
 const styles = StyleSheet.create({
-  buttonGroup: {
+  mapPreview: {
+    width: '100%',
+    height: 200,
+    marginVertical: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: globalStyles.colors[themeColor][100],
+    borderRadius: 8,
+    overflow: 'hidden',
+  },
+  buttonsGroup: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
