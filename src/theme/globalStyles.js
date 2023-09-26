@@ -77,6 +77,9 @@ export const textStyles = {
   default: {
     fontSize: 16,
   },
+  center: {
+    textAlign: 'center',
+  },
   fontBold: {
     fontWeight: 'bold',
   },

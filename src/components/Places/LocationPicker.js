@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import { View, StyleSheet, Alert, Linking } from 'react-native';
-import { getCurrentPositionAsync, useForegroundPermissions, PermissionStatus, requestForegroundPermissionsAsync } from 'expo-location';
+import { useState } from 'react';
+import { View, StyleSheet, Alert } from 'react-native';
+import { getCurrentPositionAsync, useForegroundPermissions, PermissionStatus } from 'expo-location';
 import { globalStyles, themeColor } from '../../theme';
 import { Button } from '../Buttons';
 import { Text } from '../Text';
@@ -9,6 +9,7 @@ export const LocationPicker = () => {
   const [locationPermissionInfo, requestPermission] = useForegroundPermissions();
   const [location, setLocation] = useState(null);
 
+  console.log(location);
   const verifyPermission = async () => {
     if (locationPermissionInfo.status === PermissionStatus.UNDETERMINED) {
       const permissionRes = await requestPermission();
@@ -28,7 +29,6 @@ export const LocationPicker = () => {
   const getLocationHandler = async () => {
     const hasPermission = await verifyPermission();
 
-    console.log('hasPermission', hasPermission);
     if (!hasPermission) {
       return;
     }
