@@ -6,7 +6,7 @@ import { themeColor } from '../../theme';
 export const GlobalContext = createContext({});
 
 export const GlobalProvider = ({ children }) => {
-  const [ theme, setTheme ] = useState(themeColor);
+  const [theme, setTheme] = useState(themeColor);
 
   const updateTheme = async (val) => {
     await AsyncStorage.setItem('theme', val);
@@ -30,11 +30,7 @@ export const GlobalProvider = ({ children }) => {
 
   const providerValue = {
     theme,
-    updateTheme
+    updateTheme,
   };
-  return (
-    <GlobalContext.Provider value={providerValue}>
-      {children}
-    </GlobalContext.Provider>
-  );
+  return <GlobalContext.Provider value={providerValue}>{children}</GlobalContext.Provider>;
 };

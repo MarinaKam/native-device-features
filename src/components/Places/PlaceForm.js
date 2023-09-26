@@ -26,8 +26,8 @@ export const PlaceForm = () => {
             styles.input,
             {
               borderBottomColor: globalStyles.colors[theme].dark,
-              backgroundColor: globalStyles.colors[theme][100]
-            }
+              backgroundColor: globalStyles.colors[theme][100],
+            },
           ]}
           onChangeText={handleChangeTitle}
         />

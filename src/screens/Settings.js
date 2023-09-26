@@ -19,16 +19,10 @@ export const Settings = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={[textStyles.h4, textStyles.center]}>
-        You can change a theme color
-      </Text>
+      <Text style={[textStyles.h4, textStyles.center]}>You can change a theme color</Text>
 
       <View style={styles.selectContainer}>
-        <Select
-          defaultValue={theme}
-          options={options}
-          onChange={updateTheme}
-        />
+        <Select defaultValue={theme} options={options} onChange={updateTheme} />
       </View>
     </View>
   );
@@ -40,6 +34,6 @@ const styles = StyleSheet.create({
   },
   selectContainer: {
     width: '100%',
-    marginVertical: 16
-  }
+    marginVertical: 16,
+  },
 });

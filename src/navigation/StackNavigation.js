@@ -33,7 +33,12 @@ export const StackNavigation = () => {
             <IconButton icon="add" color={tintColor} size={24} onPress={() => navigation.navigate('AddPlace')} />
           ),
           headerLeft: ({ tintColor }) => (
-            <IconButton icon="settings-outline" color={tintColor} size={24} onPress={() => navigation.navigate('Settings')} />
+            <IconButton
+              icon="settings-outline"
+              color={tintColor}
+              size={24}
+              onPress={() => navigation.navigate('Settings')}
+            />
           ),
         })}
       />

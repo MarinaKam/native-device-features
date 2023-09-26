@@ -28,20 +28,14 @@ export const Select = ({ defaultValue, options = [], onChange = () => {} }) => {
             ...styles.inputAndroid,
             backgroundColor: globalStyles.colors[theme][100],
             borderColor: globalStyles.colors[theme].main,
-          }
+          },
         }}
         useNativeAndroidPickerStyle={false}
         items={options}
         placeholder={{}}
         value={value}
         onValueChange={onValueChange}
-        Icon={() => (
-          <Ionicons
-            name="chevron-down"
-            size={24}
-            color={globalStyles.colors[theme].main}
-          />
-        )}
+        Icon={() => <Ionicons name="chevron-down" size={24} color={globalStyles.colors[theme].main} />}
       />
     </View>
   );

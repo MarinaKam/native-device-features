@@ -6,17 +6,7 @@ import { globalStyles } from '../../theme';
 export const ShadowView = ({ children, style }) => {
   const { theme } = useContext(GlobalContext);
 
-  return (
-    <View
-      style={[
-        styles.container,
-        { shadowColor: globalStyles.colors[theme].dark },
-        style
-      ]}
-    >
-      {children}
-    </View>
-  );
+  return <View style={[styles.container, { shadowColor: globalStyles.colors[theme].dark }, style]}>{children}</View>;
 };
 
 export const styles = StyleSheet.create({
