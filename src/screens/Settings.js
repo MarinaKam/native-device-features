@@ -1,7 +1,9 @@
+import { useContext } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Select } from '../components/Select';
 import { Text } from '../components/Text';
-import { textStyles, themeColor } from '../theme';
+import { GlobalContext } from '../store/GlobalProvider';
+import { textStyles } from '../theme';
 
 const options = [
   { label: 'Primary', value: 'primary' },
@@ -13,6 +15,8 @@ const options = [
 ];
 
 export const Settings = () => {
+  const { theme, updateTheme } = useContext(GlobalContext);
+
   return (
     <View style={styles.container}>
       <Text style={[textStyles.h4, textStyles.center]}>
@@ -21,9 +25,9 @@ export const Settings = () => {
 
       <View style={styles.selectContainer}>
         <Select
-          defaultValue={themeColor}
+          defaultValue={theme}
           options={options}
-          onChange={(value) => console.log(value)}
+          onChange={updateTheme}
         />
       </View>
     </View>

@@ -1,11 +1,13 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Alert, Image, StyleSheet, View } from 'react-native';
 import { launchCameraAsync, useCameraPermissions, PermissionStatus } from 'expo-image-picker';
-import { globalStyles, themeColor } from '../../theme';
+import { GlobalContext } from '../../store/GlobalProvider';
+import { globalStyles } from '../../theme';
 import { Button } from '../Buttons';
 import { Text } from '../Text';
 
 export const ImagePicker = () => {
+  const { theme } = useContext(GlobalContext);
   const [cameraPermissionInfo, requestPermission] = useCameraPermissions();
   const [pickedImage, setPickedImage] = useState(null);
 
@@ -43,7 +45,7 @@ export const ImagePicker = () => {
 
   return (
     <>
-      <View style={styles.imagePreview}>
+      <View style={[styles.imagePreview, { backgroundColor: globalStyles.colors[theme][100] }]}>
         {!pickedImage?.uri ? (
           <Text>No image taken yet.</Text>
         ) : (
@@ -65,7 +67,6 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: globalStyles.colors[themeColor][100],
     borderRadius: globalStyles.borderRadius,
     overflow: 'hidden',
   },

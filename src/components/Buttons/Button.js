@@ -1,17 +1,20 @@
 import { Ionicons } from '@expo/vector-icons';
-import { View, Pressable, StyleSheet } from 'react-native';
-import { globalStyles, themeColor } from '../../theme';
+import { useContext } from 'react';
+import { Pressable, StyleSheet } from 'react-native';
+import { GlobalContext } from '../../store/GlobalProvider';
+import { globalStyles } from '../../theme';
 import { Text } from '../Text';
 
 export const Button = ({
   variant = 'contained', // outlined, contained
-  color = themeColor, // primary, secondary, info, success, error, warning
+  color, // primary, secondary, info, success, error, warning
   icon,
   style,
   children,
   onPress,
 }) => {
-  const mainColor = globalStyles.colors?.[color]?.main || globalStyles.colors[themeColor]?.main;
+  const { theme } = useContext(GlobalContext);
+  const mainColor = globalStyles.colors?.[color]?.main || globalStyles.colors[theme]?.main;
 
   return (
     <Pressable

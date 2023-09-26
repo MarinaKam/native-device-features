@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 import RNSelect from 'react-native-picker-select';
 import { Ionicons } from '@expo/vector-icons';
-import { globalStyles, textStyles, themeColor } from '../../theme';
+import { GlobalContext } from '../../store/GlobalProvider';
+import { globalStyles, textStyles } from '../../theme';
 
 export const Select = ({ defaultValue, options = [], onChange = () => {} }) => {
+  const { theme } = useContext(GlobalContext);
   const [value, setValue] = useState(defaultValue);
 
   const onValueChange = (value) => {
@@ -15,7 +17,19 @@ export const Select = ({ defaultValue, options = [], onChange = () => {} }) => {
   return (
     <View>
       <RNSelect
-        style={styles}
+        style={{
+          ...styles,
+          inputIOS: {
+            ...styles.inputIOS,
+            backgroundColor: globalStyles.colors[theme][100],
+            borderColor: globalStyles.colors[theme].main,
+          },
+          inputAndroid: {
+            ...styles.inputAndroid,
+            backgroundColor: globalStyles.colors[theme][100],
+            borderColor: globalStyles.colors[theme].main,
+          }
+        }}
         useNativeAndroidPickerStyle={false}
         items={options}
         placeholder={{}}
@@ -25,7 +39,7 @@ export const Select = ({ defaultValue, options = [], onChange = () => {} }) => {
           <Ionicons
             name="chevron-down"
             size={24}
-            color={globalStyles.colors[themeColor].main}
+            color={globalStyles.colors[theme].main}
           />
         )}
       />
@@ -40,8 +54,6 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 8,
     borderWidth: 2,
-    backgroundColor: globalStyles.colors[themeColor][100],
-    borderColor: globalStyles.colors[themeColor].main,
     borderRadius: globalStyles.borderRadius,
     color: textStyles.color.color,
     paddingRight: 30, // to ensure the text is never behind the icon
@@ -52,8 +64,6 @@ const styles = StyleSheet.create({
     paddingVertical: 6,
     paddingHorizontal: 8,
     borderWidth: 2,
-    backgroundColor: globalStyles.colors[themeColor][100],
-    borderColor: globalStyles.colors[themeColor].main,
     borderRadius: globalStyles.borderRadius,
     color: textStyles.color.color,
     paddingRight: 30, // to ensure the text is never behind the icon

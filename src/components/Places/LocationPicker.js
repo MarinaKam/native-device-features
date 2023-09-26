@@ -1,11 +1,13 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { View, StyleSheet, Alert } from 'react-native';
 import { getCurrentPositionAsync, useForegroundPermissions, PermissionStatus } from 'expo-location';
-import { globalStyles, themeColor } from '../../theme';
+import { GlobalContext } from '../../store/GlobalProvider';
+import { globalStyles } from '../../theme';
 import { Button } from '../Buttons';
 import { Text } from '../Text';
 
 export const LocationPicker = () => {
+  const { theme } = useContext(GlobalContext);
   const [locationPermissionInfo, requestPermission] = useForegroundPermissions();
   const [location, setLocation] = useState(null);
 
@@ -42,7 +44,7 @@ export const LocationPicker = () => {
 
   return (
     <View>
-      <View style={styles.mapPreview}>
+      <View style={[styles.mapPreview, { backgroundColor: globalStyles.colors[theme][100] }]}>
         <Text>Preview Map</Text>
       </View>
 
@@ -66,7 +68,6 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: globalStyles.colors[themeColor][100],
     borderRadius: globalStyles.borderRadius,
     overflow: 'hidden',
   },
