@@ -33,12 +33,11 @@ export const LocationPicker = () => {
       return;
     }
 
-    const location = await getCurrentPositionAsync({});
+    const location = await getCurrentPositionAsync();
 
     setLocation(location);
   };
 
-  console.log('location', location);
   const pickOnMapHandler = () => {};
 
   return (
