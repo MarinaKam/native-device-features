@@ -10,42 +10,33 @@ export const Button = ({
   icon,
   style,
   children,
-  onPress
+  onPress,
 }) => {
   const mainColor = globalStyles.colors?.[color]?.main || globalStyles.colors[themeColor]?.main;
 
   return (
     <View style={[styles.container, style]}>
       <Pressable
-        style={({ pressed }) => (
-          [
-            pressed ? styles.pressed : null,
-            styles.button,
-            variant === 'contained' && {
-              backgroundColor: mainColor
-            },
-            variant === 'outlined' && {
-              borderWidth: 1,
-              backgroundColor: 'transparent',
-              borderColor: mainColor
-            },
-            { width }
-          ]
-        )}
+        style={({ pressed }) => [
+          pressed ? styles.pressed : null,
+          styles.button,
+          variant === 'contained' && {
+            backgroundColor: mainColor,
+          },
+          variant === 'outlined' && {
+            borderWidth: 1,
+            backgroundColor: 'transparent',
+            borderColor: mainColor,
+          },
+          { width },
+        ]}
         onPress={onPress}
       >
         {icon && (
-          <Ionicons
-            name={icon}
-            size={18}
-            style={styles.icon}
-            color={variant === 'contained' ? 'white' : mainColor}
-          />
+          <Ionicons name={icon} size={18} style={styles.icon} color={variant === 'contained' ? 'white' : mainColor} />
         )}
 
-        <Text style={{ color: variant === 'contained' ? 'white' : mainColor}}>
-          {children}
-        </Text>
+        <Text style={{ color: variant === 'contained' ? 'white' : mainColor }}>{children}</Text>
       </Pressable>
     </View>
   );
@@ -66,9 +57,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   icon: {
-    marginRight: 6
+    marginRight: 6,
   },
   pressed: {
-    opacity: 0.75
+    opacity: 0.75,
   },
 });

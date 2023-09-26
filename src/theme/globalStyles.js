@@ -64,20 +64,20 @@ export const globalStyles = {
       600: '#546e7a',
       700: '#455a64',
       800: '#37474f',
-      900: '#263238'
-    }
-  }
+      900: '#263238',
+    },
+  },
 };
 
 export const textStyles = {
   color: {
-    color: globalStyles.colors.grey['900']
+    color: globalStyles.colors.grey['900'],
   },
   default: {
     fontSize: 16,
   },
   fontBold: {
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
   h1: {
     fontSize: 30,
@@ -117,5 +117,5 @@ export const textStyles = {
   },
   caption: {
     fontSize: 12,
-  }
+  },
 };

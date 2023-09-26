@@ -16,8 +16,8 @@ export const StackNavigation = () => {
         },
         headerTintColor: globalStyles.colors.grey['900'],
         contentStyle: {
-          backgroundColor: globalStyles.colors[themeColor]['50']
-        }
+          backgroundColor: globalStyles.colors[themeColor]['50'],
+        },
       }}
     >
       <Stack.Screen
@@ -26,20 +26,15 @@ export const StackNavigation = () => {
         options={({ navigation }) => ({
           title: 'Your Favorite Places',
           headerRight: ({ tintColor }) => (
-            <IconButton
-              icon="add"
-              color={tintColor}
-              size={24}
-              onPress={() => navigation.navigate('AddPlace')}
-            />
-          )
+            <IconButton icon="add" color={tintColor} size={24} onPress={() => navigation.navigate('AddPlace')} />
+          ),
         })}
       />
       <Stack.Screen
         name="AddPlace"
         component={AddPlace}
         options={{
-          title: 'Add a new Place'
+          title: 'Add a new Place',
         }}
       />
     </Stack.Navigator>

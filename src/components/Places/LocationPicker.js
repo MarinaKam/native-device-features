@@ -3,7 +3,6 @@ import { Button } from '../Buttons';
 import { Text } from '../Text';
 
 export const LocationPicker = () => {
-
   const getLocationHandler = () => {};
   const pickOnMapHandler = () => {};
 
@@ -16,11 +15,7 @@ export const LocationPicker = () => {
       <Text>LocationPicker</Text>
 
       <View style={styles.buttonGroup}>
-        <Button
-          style={styles.button}
-          icon="location"
-          onPress={getLocationHandler}
-        >
+        <Button style={styles.button} icon="location" onPress={getLocationHandler}>
           Locate the User
         </Button>
 
@@ -36,9 +31,9 @@ const styles = StyleSheet.create({
   buttonGroup: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   button: {
-    width: '48%'
-  }
+    width: '48%',
+  },
 });

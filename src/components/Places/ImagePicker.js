@@ -17,10 +17,7 @@ export const ImagePicker = () => {
     }
 
     if (cameraPermissionInfo.status === PermissionStatus.DENIED) {
-      Alert.alert(
-        'Insufficient Permissions!',
-        'You need to grant camera permissions to use this app.'
-      );
+      Alert.alert('Insufficient Permissions!', 'You need to grant camera permissions to use this app.');
 
       return false;
     }
@@ -50,10 +47,7 @@ export const ImagePicker = () => {
         {!pickedImage?.uri ? (
           <Text>No image taken yet.</Text>
         ) : (
-          <Image
-            style={styles.image}
-            source={{ uri: pickedImage?.uri }}
-          />
+          <Image style={styles.image} source={{ uri: pickedImage?.uri }} />
         )}
       </View>
 
@@ -73,10 +67,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: globalStyles.colors[themeColor][100],
     borderRadius: 8,
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
   image: {
     width: '100%',
     height: '100%',
-  }
+  },
 });

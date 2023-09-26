@@ -17,11 +17,7 @@ export const PlaceForm = () => {
       <View>
         <Text style={[textStyles.fontBold, styles.label]}>Title</Text>
 
-        <TextInput
-          value={titleVal}
-          style={[textStyles.color, styles.input]}
-          onChangeText={handleChangeTitle}
-        />
+        <TextInput value={titleVal} style={[textStyles.color, styles.input]} onChangeText={handleChangeTitle} />
       </View>
 
       <ImagePicker />
@@ -33,10 +29,10 @@ export const PlaceForm = () => {
 const styles = StyleSheet.create({
   form: {
     // flex: 1,
-    padding: 24
+    padding: 24,
   },
   label: {
-    marginBottom: 4
+    marginBottom: 4,
   },
   input: {
     marginVertical: 8,
@@ -45,6 +41,6 @@ const styles = StyleSheet.create({
     borderBottomColor: globalStyles.colors[themeColor].dark,
     borderBottomWidth: 2,
     backgroundColor: globalStyles.colors[themeColor][100],
-    borderRadius: 8
-  }
+    borderRadius: 8,
+  },
 });
