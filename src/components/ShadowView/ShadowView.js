@@ -1,8 +1,12 @@
+import { useContext } from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
-import { globalStyles, themeColor } from '../../theme';
+import { GlobalContext } from '../../store/GlobalProvider';
+import { globalStyles } from '../../theme';
 
 export const ShadowView = ({ children, style }) => {
-  return <View style={[styles.container, style]}>{children}</View>;
+  const { theme } = useContext(GlobalContext);
+
+  return <View style={[styles.container, { shadowColor: globalStyles.colors[theme].dark }, style]}>{children}</View>;
 };
 
 export const styles = StyleSheet.create({
@@ -13,7 +17,6 @@ export const styles = StyleSheet.create({
     marginVertical: 8,
     marginHorizontal: 18,
     overflow: Platform.OS === 'android' ? 'hidden' : 'visible',
-    shadowColor: globalStyles.colors[themeColor].dark,
     shadowOffset: {
       width: 1,
       height: 1,

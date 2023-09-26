@@ -1,11 +1,13 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { ScrollView, StyleSheet, TextInput, View } from 'react-native';
-import { globalStyles, textStyles, themeColor } from '../../theme';
+import { GlobalContext } from '../../store/GlobalProvider';
+import { globalStyles, textStyles } from '../../theme';
 import { Text } from '../Text';
 import { ImagePicker } from './ImagePicker';
 import { LocationPicker } from './LocationPicker';
 
 export const PlaceForm = () => {
+  const { theme } = useContext(GlobalContext);
   const [titleVal, setTitleVal] = useState('');
 
   const handleChangeTitle = (val) => {
@@ -17,7 +19,18 @@ export const PlaceForm = () => {
       <View>
         <Text style={[textStyles.fontBold, styles.label]}>Title</Text>
 
-        <TextInput value={titleVal} style={[textStyles.color, styles.input]} onChangeText={handleChangeTitle} />
+        <TextInput
+          value={titleVal}
+          style={[
+            textStyles.color,
+            styles.input,
+            {
+              borderBottomColor: globalStyles.colors[theme].dark,
+              backgroundColor: globalStyles.colors[theme][100],
+            },
+          ]}
+          onChangeText={handleChangeTitle}
+        />
       </View>
 
       <ImagePicker />
@@ -37,9 +50,7 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     padding: 8,
     fontSize: 16,
-    borderBottomColor: globalStyles.colors[themeColor].dark,
     borderBottomWidth: 2,
-    backgroundColor: globalStyles.colors[themeColor][100],
     borderRadius: globalStyles.borderRadius,
   },
 });
