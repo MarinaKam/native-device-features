@@ -7,6 +7,8 @@ export const globalStyles = {
     },
     secondary: {
       50: '#f3e5f5',
+      100: '#e1bee7',
+      200: '#ce93d8',
       light: '#ba68c8',
       main: '#9c27b0',
       dark: '#7b1fa2',
@@ -56,6 +58,9 @@ export const textStyles = {
   },
   default: {
     fontSize: 16,
+  },
+  fontBold: {
+    fontWeight: 'bold'
   },
   h1: {
     fontSize: 30,
