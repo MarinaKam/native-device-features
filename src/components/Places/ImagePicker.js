@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: globalStyles.colors[themeColor][100],
-    borderRadius: 8,
+    borderRadius: globalStyles.borderRadius,
     overflow: 'hidden',
   },
   image: {

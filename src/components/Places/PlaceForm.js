@@ -40,6 +40,6 @@ const styles = StyleSheet.create({
     borderBottomColor: globalStyles.colors[themeColor].dark,
     borderBottomWidth: 2,
     backgroundColor: globalStyles.colors[themeColor][100],
-    borderRadius: 8,
+    borderRadius: globalStyles.borderRadius,
   },
 });

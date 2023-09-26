@@ -1,6 +1,7 @@
 export const themeColor = 'secondary'; // primary, secondary, info, success, error, warning
 
 export const globalStyles = {
+  borderRadius: 8,
   colors: {
     primary: {
       50: '#e3f2fd',

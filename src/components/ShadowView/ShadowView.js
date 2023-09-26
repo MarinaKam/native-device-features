@@ -8,7 +8,7 @@ export const ShadowView = ({ children, style }) => {
 export const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
-    borderRadius: 6,
+    borderRadius: globalStyles.borderRadius,
     elevation: 4,
     marginVertical: 8,
     marginHorizontal: 18,

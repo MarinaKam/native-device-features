@@ -1,4 +1,5 @@
 import { View, StyleSheet } from 'react-native';
+import { getCurrentPositionAsync } from 'expo-location';
 import { globalStyles, themeColor } from '../../theme';
 import { Button } from '../Buttons';
 import { Text } from '../Text';
@@ -34,7 +35,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: globalStyles.colors[themeColor][100],
-    borderRadius: 8,
+    borderRadius: globalStyles.borderRadius,
     overflow: 'hidden',
   },
   buttonsGroup: {

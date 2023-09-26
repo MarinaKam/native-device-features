@@ -26,7 +26,7 @@ export const Button = ({
           backgroundColor: 'transparent',
           borderColor: mainColor,
         },
-        style
+        style,
       ]}
       onPress={onPress}
     >
@@ -41,7 +41,7 @@ export const Button = ({
 
 const styles = StyleSheet.create({
   button: {
-    borderRadius: 4,
+    borderRadius: globalStyles.borderRadius,
     padding: 8,
     marginVertical: 4,
     flexDirection: 'row',
