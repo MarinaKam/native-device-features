@@ -3,12 +3,13 @@ import { useContext } from 'react';
 import { IconButton } from '../components/Buttons';
 import { AddPlace, AllPlaces, Settings } from '../screens';
 import { GlobalContext } from '../store/GlobalProvider';
-import { globalStyles } from '../theme';
+import { globalStyles, themeColor } from '../theme';
 
 const Stack = createNativeStackNavigator();
 
 export const StackNavigation = () => {
-  const { theme } = useContext(GlobalContext);
+  const { theme: storedTheme } = useContext(GlobalContext);
+  const theme = storedTheme || themeColor;
 
   return (
     <Stack.Navigator
