@@ -1,17 +1,18 @@
+import { getCurrentPositionAsync, useForegroundPermissions, PermissionStatus } from 'expo-location';
 import { useContext, useState } from 'react';
 import { View, StyleSheet, Alert } from 'react-native';
-import { getCurrentPositionAsync, useForegroundPermissions, PermissionStatus } from 'expo-location';
+
 import { GlobalContext } from '../../store/GlobalProvider';
 import { globalStyles } from '../../theme';
 import { Button } from '../Buttons';
-import { Text } from '../Text';
+import { Map } from '../Map';
 
 export const LocationPicker = () => {
   const { theme } = useContext(GlobalContext);
   const [locationPermissionInfo, requestPermission] = useForegroundPermissions();
-  const [location, setLocation] = useState(null);
+  const [setLocation] = useState(null);
 
-  console.log(location);
+  // console.log(location);
   const verifyPermission = async () => {
     if (locationPermissionInfo.status === PermissionStatus.UNDETERMINED) {
       const permissionRes = await requestPermission();
@@ -45,7 +46,7 @@ export const LocationPicker = () => {
   return (
     <View>
       <View style={[styles.mapPreview, { backgroundColor: globalStyles.colors[theme][100] }]}>
-        <Text>Preview Map</Text>
+        <Map />
       </View>
 
       <View style={styles.buttonsGroup}>
@@ -62,21 +63,21 @@ export const LocationPicker = () => {
 };
 
 const styles = StyleSheet.create({
-  mapPreview: {
-    width: '100%',
-    height: 200,
-    marginVertical: 8,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: globalStyles.borderRadius,
-    overflow: 'hidden',
-  },
-  buttonsGroup: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
   button: {
     width: '48%',
+  },
+  buttonsGroup: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  mapPreview: {
+    alignItems: 'center',
+    borderRadius: globalStyles.borderRadius,
+    height: 200,
+    justifyContent: 'center',
+    marginVertical: 8,
+    overflow: 'hidden',
+    width: '100%',
   },
 });

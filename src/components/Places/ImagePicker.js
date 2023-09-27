@@ -1,6 +1,7 @@
+import { launchCameraAsync, useCameraPermissions, PermissionStatus } from 'expo-image-picker';
 import { useContext, useState } from 'react';
 import { Alert, Image, StyleSheet, View } from 'react-native';
-import { launchCameraAsync, useCameraPermissions, PermissionStatus } from 'expo-image-picker';
+
 import { GlobalContext } from '../../store/GlobalProvider';
 import { globalStyles } from '../../theme';
 import { Button } from '../Buttons';
@@ -61,17 +62,17 @@ export const ImagePicker = () => {
 };
 
 const styles = StyleSheet.create({
-  imagePreview: {
+  image: {
+    height: '100%',
     width: '100%',
-    height: 200,
-    marginVertical: 8,
-    justifyContent: 'center',
+  },
+  imagePreview: {
     alignItems: 'center',
     borderRadius: globalStyles.borderRadius,
+    height: 200,
+    justifyContent: 'center',
+    marginVertical: 8,
     overflow: 'hidden',
-  },
-  image: {
     width: '100%',
-    height: '100%',
   },
 });

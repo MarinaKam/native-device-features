@@ -1,6 +1,8 @@
 import { Ionicons } from '@expo/vector-icons';
+import PropTypes from 'prop-types';
 import { useContext } from 'react';
 import { Pressable, StyleSheet } from 'react-native';
+
 import { GlobalContext } from '../../store/GlobalProvider';
 import { globalStyles } from '../../theme';
 import { Text } from '../Text';
@@ -44,12 +46,12 @@ export const Button = ({
 
 const styles = StyleSheet.create({
   button: {
+    alignItems: 'center',
     borderRadius: globalStyles.borderRadius,
-    padding: 8,
-    marginVertical: 4,
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center',
+    marginVertical: 4,
+    padding: 8,
   },
   icon: {
     marginRight: 6,
@@ -58,3 +60,12 @@ const styles = StyleSheet.create({
     opacity: 0.75,
   },
 });
+
+Button.propTypes = {
+  variant: PropTypes.string,
+  color: PropTypes.string,
+  icon: PropTypes.string,
+  style: PropTypes.object,
+  children: PropTypes.string.isRequired,
+  onPress: PropTypes.func.isRequired,
+};

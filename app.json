@@ -13,6 +13,20 @@
           "photosPermission": "The app needs access to your photos to let you share them with your friends.",
           "cameraPermission": "The app needs access to your camera in order to take phone of your favorite places"
         }
+      ],
+      [
+        "@rnmapbox/maps",
+        {
+          "RNMapboxMapsImpl": "mapbox",
+          "RNMapboxMapsVersion": "10.11.1",
+          "RNMapboxMapsDownloadToken": "sk.eyJ1IjoibWFyaWUta2FtIiwiYSI6ImNsbjE1Yjl6OTF1MXIyaW52ZHZpYnM3M3MifQ.VU9XudLs31t5Vj_uXbjUyA"
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Show current location on map."
+        }
       ]
     ],
     "splash": {
@@ -20,18 +34,33 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "io.expo.client"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.FOREGROUND_SERVICE"
+      ],
+      "package": "android.expo.client"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "845a694a-38c8-498d-b818-c642572402d9"
+      }
     }
   }
 }

@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { View, StyleSheet } from 'react-native';
+
 import { Select } from '../components/Select';
 import { Text } from '../components/Text';
 import { GlobalContext } from '../store/GlobalProvider';
@@ -33,7 +34,7 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   selectContainer: {
-    width: '100%',
     marginVertical: 16,
+    width: '100%',
   },
 });

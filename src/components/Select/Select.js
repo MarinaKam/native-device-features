@@ -1,7 +1,9 @@
+import { Ionicons } from '@expo/vector-icons';
+import PropTypes from 'prop-types';
 import { useContext, useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 import RNSelect from 'react-native-picker-select';
-import { Ionicons } from '@expo/vector-icons';
+
 import { GlobalContext } from '../../store/GlobalProvider';
 import { globalStyles, textStyles } from '../../theme';
 
@@ -41,29 +43,36 @@ export const Select = ({ defaultValue, options = [], onChange = () => {} }) => {
   );
 };
 
+Select.propTypes = {
+  defaultValue: PropTypes.string.isRequired,
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      value: PropTypes.string.isRequired,
+    })
+  ),
+  onChange: PropTypes.func.isRequired,
+};
+
 const styles = StyleSheet.create({
-  inputIOS: {
-    marginVertical: 8,
-    fontSize: 14,
-    paddingVertical: 12,
-    paddingHorizontal: 8,
-    borderWidth: 2,
-    borderRadius: globalStyles.borderRadius,
-    color: textStyles.color.color,
-    paddingRight: 30, // to ensure the text is never behind the icon
-  },
   inputAndroid: {
-    marginVertical: 8,
-    fontSize: 14,
-    paddingVertical: 6,
-    paddingHorizontal: 8,
-    borderWidth: 2,
     borderRadius: globalStyles.borderRadius,
+    borderWidth: 2,
     color: textStyles.color.color,
-    paddingRight: 30, // to ensure the text is never behind the icon
+    fontSize: 14,
+    marginVertical: 8,
+    paddingHorizontal: 8,
+    paddingRight: 30,
+    paddingVertical: 6, // to ensure the text is never behind the icon
   },
-  iconContainer: {
-    top: 17,
-    right: 10,
+  inputIOS: {
+    borderRadius: globalStyles.borderRadius,
+    borderWidth: 2,
+    color: textStyles.color.color,
+    fontSize: 14,
+    marginVertical: 8,
+    paddingHorizontal: 8,
+    paddingRight: 30,
+    paddingVertical: 12, // to ensure the text is never behind the icon
   },
 });

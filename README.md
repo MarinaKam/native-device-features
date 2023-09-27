@@ -3,7 +3,7 @@
 `npm i react-native-picker-select --legacy-peer-deps`
 
 
-can help also for select:
+###can help also for select:
 ```
  "overrides": {
     "react-native-picker-select": {
@@ -11,3 +11,7 @@ can help also for select:
     }
   }
 ```
+
+
+### check build 
+``npx expo prebuild --clean``

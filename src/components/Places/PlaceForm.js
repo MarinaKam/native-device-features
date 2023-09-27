@@ -1,10 +1,11 @@
 import { useContext, useState } from 'react';
 import { ScrollView, StyleSheet, TextInput, View } from 'react-native';
+
+import { ImagePicker } from './ImagePicker';
+import { LocationPicker } from './LocationPicker';
 import { GlobalContext } from '../../store/GlobalProvider';
 import { globalStyles, textStyles } from '../../theme';
 import { Text } from '../Text';
-import { ImagePicker } from './ImagePicker';
-import { LocationPicker } from './LocationPicker';
 
 export const PlaceForm = () => {
   const { theme } = useContext(GlobalContext);
@@ -43,14 +44,14 @@ const styles = StyleSheet.create({
   form: {
     padding: 24,
   },
-  label: {
-    marginBottom: 4,
-  },
   input: {
-    marginVertical: 8,
-    padding: 8,
-    fontSize: 16,
     borderBottomWidth: 2,
     borderRadius: globalStyles.borderRadius,
+    fontSize: 16,
+    marginVertical: 8,
+    padding: 8,
+  },
+  label: {
+    marginBottom: 4,
   },
 });

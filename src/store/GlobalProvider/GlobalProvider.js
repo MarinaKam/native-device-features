@@ -1,6 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { createContext, useState } from 'react';
-import { useEffect } from 'react/index';
+import PropTypes from 'prop-types';
+import { createContext, useState, useEffect } from 'react';
+
 import { themeColor } from '../../theme';
 
 export const GlobalContext = createContext({});
@@ -33,4 +34,8 @@ export const GlobalProvider = ({ children }) => {
     updateTheme,
   };
   return <GlobalContext.Provider value={providerValue}>{children}</GlobalContext.Provider>;
+};
+
+GlobalProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 };

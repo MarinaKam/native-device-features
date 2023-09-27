@@ -1,5 +1,6 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useContext } from 'react';
+
 import { IconButton } from '../components/Buttons';
 import { AddPlace, AllPlaces, Settings } from '../screens';
 import { GlobalContext } from '../store/GlobalProvider';
