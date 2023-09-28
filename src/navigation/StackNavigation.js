@@ -32,13 +32,20 @@ export const StackNavigation = () => {
         options={({ navigation }) => ({
           title: 'Your Favorite Places',
           headerRight: ({ tintColor }) => (
-            <IconButton icon="add" color={tintColor} size={24} onPress={() => navigation.navigate('AddPlace')} />
+            <IconButton
+              icon="add"
+              color={tintColor}
+              size={24}
+              style={{ width: 40, marginRight: -10 }}
+              onPress={() => navigation.navigate('AddPlace')}
+            />
           ),
           headerLeft: ({ tintColor }) => (
             <IconButton
               icon="settings-outline"
               color={tintColor}
               size={24}
+              style={{ width: 40, marginLeft: -10 }}
               onPress={() => navigation.navigate('Settings')}
             />
           ),

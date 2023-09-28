@@ -33,9 +33,15 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.mariekam.nativefeatures",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "config": {
+        "googleMaps": {
+          "apiKey": "${process.env.EXPO_PUBLIC_GOOGLE_API_KEY}"
+        }
       }
     },
     "web": {

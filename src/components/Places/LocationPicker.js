@@ -1,5 +1,5 @@
-import { getCurrentPositionAsync, useForegroundPermissions, PermissionStatus } from 'expo-location';
 import { useContext, useState } from 'react';
+import { getCurrentPositionAsync, useForegroundPermissions, PermissionStatus } from 'expo-location';
 import { View, StyleSheet, Alert } from 'react-native';
 
 import { GlobalContext } from '../../store/GlobalProvider';
@@ -10,9 +10,8 @@ import { Map } from '../Map';
 export const LocationPicker = () => {
   const { theme } = useContext(GlobalContext);
   const [locationPermissionInfo, requestPermission] = useForegroundPermissions();
-  const [setLocation] = useState(null);
+  const [location, setLocation] = useState(null);
 
-  // console.log(location);
   const verifyPermission = async () => {
     if (locationPermissionInfo.status === PermissionStatus.UNDETERMINED) {
       const permissionRes = await requestPermission();
@@ -33,12 +32,16 @@ export const LocationPicker = () => {
     const hasPermission = await verifyPermission();
 
     if (!hasPermission) {
+      setLocation(null);
       return;
     }
 
-    const location = await getCurrentPositionAsync();
+    const pickedLocation = await getCurrentPositionAsync();
 
-    setLocation(location);
+    setLocation({
+      lat: pickedLocation?.coords?.latitude,
+      lng: pickedLocation?.coords?.longitude,
+    });
   };
 
   const pickOnMapHandler = () => {};
@@ -46,7 +49,7 @@ export const LocationPicker = () => {
   return (
     <View>
       <View style={[styles.mapPreview, { backgroundColor: globalStyles.colors[theme][100] }]}>
-        <Map />
+        <Map coordinates={[location]} />
       </View>
 
       <View style={styles.buttonsGroup}>
@@ -79,5 +82,5 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     overflow: 'hidden',
     width: '100%',
-  },
+  }
 });
