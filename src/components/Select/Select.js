@@ -55,6 +55,10 @@ Select.propTypes = {
 };
 
 const styles = StyleSheet.create({
+  iconContainer: {
+    right: 10,
+    top: 17,
+  },
   inputAndroid: {
     borderRadius: globalStyles.borderRadius,
     borderWidth: 2,
